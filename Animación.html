@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,
+initial-scale=1.0">
+
+<title>Document</title>
+
+<style>
+    .glass{
+        background-color: #00455e;
+        margin: 62px;
+        width: 50px;/*Ancho de la figura.*/
+        height: 75px;/*Altura de la figura.*/
+        overflow: hidden; /*Si está fuera de la figura se oculta.*/
+        position: relative;
+        clip-path: polygon(0 0, 100% 0,80% 100%, 20% 100%);
+    }
+
+    .inner{
+        width: 100px;/*Ancho del interior de la figura.*/
+        height: 75px;/*Altura del interior de la figura.*/
+        background-color: #ffae00;
+        position: absolute;
+        bottom: -75px;
+        animation: fill 1.5s alternate-reverse infinite;/*La velocidad de la animación y el número de veces.*/
+    }
+
+    /*Marca los puntos de la trayectoria que deben ser alcanzados mediante la aniamción.*/
+    @keyframes fill {
+    0%{
+        bottom: -75px;
+    }
+    100%{
+        bottom: 0px;
+    }
+}
+</style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="glass"> 
+            <div class="inner"></div>
+    </div>
+    </div>
+</body>
+</html>
